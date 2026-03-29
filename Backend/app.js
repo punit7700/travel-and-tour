@@ -25,9 +25,9 @@ connectDB();
 const app = express();
 app.use(cookieParser());
 
-// Middleware
-app.use(upload.none()); // Parse multipart form data
-app.use(express.json()); // Parse JSON requests
+// All Middleware
+app.use(upload.none()); // Parse multipart form data.
+app.use(express.json()); // Parse JSON requests.
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use((req, res, next) => {
@@ -45,7 +45,6 @@ app.use(express.static(path.join(__dirname, "../Frontend/Public")));
 app.engine("ejs", ejsMate);
 
 // Routes
-
 app.get("/", (req, res) => {
   res.render("index");
 });
